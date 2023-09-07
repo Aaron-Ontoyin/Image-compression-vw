@@ -6,118 +6,255 @@
     <div class="grid place-items-center pb-10 lg:pb-20 bg-gradient-to-b from-slate-900 to-blue-100 pt-10 w-screen">
         <h1 class="text-3xl font-semibold mb-4 text-center">Control Your Pixels</h1>
         <div class="m-2 lg:m-4 ms-1  text-center">
-            <p>Lorem ipsum dolor sit amet, clg:w-2/3onsectetur adipisicing elit. Dolor laboriosam soluta repellendus
-                molestiae velit enim voluptatibus aliquam debitis facere! Ea et repellendus ad obcaecati!</p>
+            <p>Unveil artful compression here! Craft impeccable images with surgical precision. Your pixel mastery
+                starts now.</p>
+        </div>
+        <div class="w-full text-right pr-6 mt-5 md:mt-0">
+
+            <!-- Modal toggle -->
+            <button data-ripple-light="true" data-dialog-target="dialog"
+                class="ext-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button">
+                <!-- <svg class="w-3.5 h-3.5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                    <path d=""/>
+                </svg> -->
+                ? Help
+            </button>
+
+            <div data-dialog-backdrop="dialog" data-dialog-backdrop-close="true"
+                class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
+                <div data-dialog="dialog"
+                    class="relative m-4 min-w-[40%] md:w-[50%] rounded-lg bg-white font-sans font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl">
+                    <div
+                        class="flex shrink-0 items-center p-4 font-sans text-2xl text-left font-semibold leading-snug text-blue-gray-900 antialiased">
+                        Compresion Settings Help
+                    </div>
+                    <div
+                        class="relative border-t border-b border-t-blue-gray-100 text-left border-b-blue-gray-100 p-4 text-blue-gray-500">
+
+                        <h2 class="font-medium">Compression Type</h2>
+                        <p>
+                            <span style="color: deepskyblue;">Lossless</span> This option style="background-color:
+                            aliceblue;" retains the highest quality
+                            but may result in larger file sizes. Use it when preserving image quality is crucial. <br>
+                            <span style="color: deepskyblue;">Lossy</span> Choose this option style="background-color:
+                            aliceblue;" to reduce saving storage
+                            space.
+                        </p>
+
+                        <h2 class="font-medium">Compression Magnitude:</h2>
+                        <p>
+                            <span style="color: deepskyblue;">1-3</span> Use for minimal compression and the best
+                            quality. Suitable for high-quality images but with larger file sizes. <br>
+                            <span style="color: deepskyblue;">4-7</span> Offers a balance between quality and file size.
+                            Ideal for most situations. <br>
+                            <span style="color: deepskyblue;">8-10</span> Use for strong compression and smaller file
+                            sizes. Quality may decrease, so choose this for web or casual use.
+                            <p />
+
+                        <h2 class="font-medium">Resolution</h2>
+                        <p>
+                            <span style="color: deepskyblue;">Full Size</span> Keeps the image at its original
+                            resolution. <br>
+                            <span style="color: deepskyblue;">High</span> Slightly reduces resolution while maintaining
+                            good quality. <br>
+                            <span style="color: deepskyblue;">Medium</span> Moderately reduces resolution for a balance
+                            between quality and file size. <br>
+                            <span style="color: deepskyblue;">Low</span> Significantly reduces resolution to save space
+                            but may impact quality.
+                            <p />
+
+                        <h2 class="font-medium">Meta Data Preservation</h2>
+                        <p>
+                            <span style="color: deepskyblue;">Preserve</span> Keeps all image metadata (EXIF, location,
+                            etc.). <br>
+                            <span style="color: deepskyblue;">Strip</span> Removes all metadata to reduce file size.
+                            Choose this for privacy or smaller files. <br>
+                            <p />
+
+                        <h2 class="font-medium">Color Space</h2>
+                        <p>
+                            <span style="color: deepskyblue;">RGB</span> Standard color space for most images. <br>
+                            <span style="color: deepskyblue;">CMYK</span> Use for printing or specialized color needs.
+                            <br>
+                            <span style="color: deepskyblue;">Grayscale</span> Converts the image to black and white.
+                            <p />
+
+                        <p>
+                        <h2 class="font-medium">Optimization Level</h2>
+                        <span style="color: deepskyblue;">Low</span> Minimal optimization for the best quality. <br>
+                        <span style="color: deepskyblue;">High</span> Good balance between quality and file size. <br>
+                        <span style="color: deepskyblue;">High</span> Higher optimization, suitable for web or digital
+                        sharing. <br>
+                        <span style="color: deepskyblue;">Maximum</span> Strong optimization for the smallest file size
+                        but lower quality.
+                        <p />
+                        <p>
+                            These settings give you control over your image compression. Select the options that best
+                            match your needs, whether it's preserving quality or saving space.
+                        </p>
+
+                        <!-- TODO: note about inactive choices due to a choice -->
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="w-full lg:w-auto md:w-1/3 m-1 flex flex-col lg:flex-row text-center">
-        <div class="m-2 flex flex-col">
-            <span class="text-purple-400 text-1xl">Image Format</span>
-            <button id="dropdownHoverButton1" data-dropdown-toggle="dropdownHover1" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                Dropdown hover
-                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
-            </button>
-        
-            <!-- Dropdown menu -->
-            <div id="dropdownHover1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton1">
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Dashboard', 'dropdownHoverButton1')">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Settings', 'dropdownHoverButton1')">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Earnings', 'dropdownHoverButton1')">Earnings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Sign out', 'dropdownHoverButton1')">Sign out</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="m-2 flex flex-col">
-            <span class="text-purple-400 text-1xl">Compression Mag.</span>
-            <button id="dropdownHoverButton2" data-dropdown-toggle="dropdownHover2" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                Dropdown hover
-                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
-            </button>
-        
-            <!-- Dropdown menu -->
-            <div id="dropdownHover2" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Dashboard', 'dropdownHoverButton2')">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Settings', 'dropdownHoverButton2')">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Earnings', 'dropdownHoverButton2')">Earnings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Sign out', 'dropdownHoverButton2')">Sign out</a>
-                    </li>
-                </ul>
+    <div class="w-full">
+        <form action="" id="settings-form" class="w-full flex flex-wrap justify-around">
+            <div class="relative m-3 h-10 w-72 min-w-[200px]">
+                <select
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                    id="compression-type" name="compression_type">
+                    <option style="background-color: aliceblue;" value="Lossless">Lossless</option>
+                    <option style="background-color: aliceblue;" value="Lossy">Lossy</option>
+                </select>
+                <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    Compression Type
+                </label>
             </div>
-        </div>
 
-        <div class="m-2 flex flex-col">
-            <span class="text-purple-400 text-1xl">Compression Type</span>
-            <button id="dropdownHoverButton3" data-dropdown-toggle="dropdownHover3" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                Dropdown hover
-                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
-            </button>
-        
-            <!-- Dropdown menu -->
-            <div id="dropdownHover3" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Dashboard', 'dropdownHoverButton3')">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Settings', 'dropdownHoverButton3')">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Earnings', 'dropdownHoverButton3')">Earnings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="changeButtonText('Sign out', 'dropdownHoverButton3')">Sign out</a>
-                    </li>
-                </ul>
+            <div class="relative m-3 h-10 w-72 min-w-[200px]">
+                <select id="image-format" name="image_format" 
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">                    
+                    <option style="background-color: aliceblue;" value="JPEG">JPEG</option>
+                    <option style="background-color: aliceblue;" value="PNG">PNG</option>
+                    <option style="background-color: aliceblue;" value="BMP">BMP</option>
+                    <option style="background-color: aliceblue;" value="TIFF">TIFF</option>                    
+                    <option style="background-color: aliceblue;" value="PPM">PPM</option>
+                    <option style="background-color: aliceblue;" value="PBM">PBM</option>
+                    <option style="background-color: aliceblue;" value="PGM">PGM</option>
+                    <option style="background-color: aliceblue;" value="EPS">EPS</option>
+                    <option style="background-color: aliceblue;" value="PSD">PSD</option>
+                    <option style="background-color: aliceblue;" value="PDF">PDF</option>
+                    <option style="background-color: aliceblue;" value="ICO">ICO</option>
+                    <option style="background-color: aliceblue;" value="ICNS">ICNS</option>
+                    <option style="background-color: aliceblue;" value="TGA">TGA</option>
+                    <option style="background-color: aliceblue;" value="SPIDER">SPIDER</option>
+                    <option style="background-color: aliceblue;" value="XBM">XBM</option>
+                    <option style="background-color: aliceblue;" value="XPM">XPM</option>
+                    <option style="background-color: aliceblue;" value="IM">IM</option>
+                </select>
+                <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    Image Format
+                </label>
             </div>
-        </div>
+
+            <div class="relative m-3 h-10 w-72 min-w-[200px]">
+                <select id="compression-magnitude" name="compression_magnitude" disabled
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                    <option style="background-color: aliceblue;" value="1">1</option>
+                    <option style="background-color: aliceblue;" value="2">2</option>
+                    <option style="background-color: aliceblue;" value="3">3</option>
+                    <option style="background-color: aliceblue;" value="4">4</option>
+                    <option style="background-color: aliceblue;" value="5">5</option>
+                    <option style="background-color: aliceblue;" value="6">6</option>
+                    <option style="background-color: aliceblue;" value="7">7</option>
+                    <option style="background-color: aliceblue;" value="8">8</option>
+                    <option style="background-color: aliceblue;" value="9">9</option>
+                    <option style="background-color: aliceblue;" value="10">10</option>
+                </select>
+                <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    Compression Magnitude
+                </label>
+            </div>
+
+            <div class="relative m-3 h-10 w-72 min-w-[200px]">
+                <select id="resolution" name="resolution"
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                    <option style="background-color: aliceblue;" value="Full Size">Full Size</option>
+                    <option style="background-color: aliceblue;" value="High">High</option>
+                    <option style="background-color: aliceblue;" value="Medium">Medium</option>
+                    <option style="background-color: aliceblue;" value="Low">Low</option>
+                </select>
+                <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    Resolution
+                </label>
+            </div>
+
+            <div class="relative m-3 h-10 w-72 min-w-[200px]">
+                <select id="meta-data-preservation" name="meta_data_preservation" disabled
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                    <option style="background-color: aliceblue;" value="Preserve">Preserve</option>
+                    <option style="background-color: aliceblue;" value="Strip">Strip</option>
+                </select>
+                <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    Meta Data Preservation
+                </label>
+            </div>
+
+            <div class="relative m-3 h-10 w-72 min-w-[200px]">
+                <select id="color-space" name="color_space"
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                    <option style="background-color: aliceblue;" value="RGB">RGB</option>
+                    <option style="background-color: aliceblue;" value="CMYK">CMYK</option>
+                    <option style="background-color: aliceblue;" value="Grayscale">Grayscale</option>
+                </select>
+                <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    Color Space
+                </label>
+            </div>
+
+            <div class="relative m-3 h-10 w-72 min-w-[200px]">
+                <select id="optimization-level" name="optimization_level" disabled
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                    <option style="background-color: aliceblue;" value="Low">Low</option>
+                    <option style="background-color: aliceblue;" value="Medium">Medium</option>
+                    <option style="background-color: aliceblue;" value="High">High</option>
+                    <option style="background-color: aliceblue;" value="Maximum">Maximum</option>
+                </select>
+                <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                    Optimization Level
+                </label>
+            </div>
+
+        </form>
+
     </div>
 
     <div class="flex flex-col lg:flex-row justify-around">
         <!-- Upload -->
-        <div class="w-80 bg-blue-300 rounded-lg m-4 lg:m-7 p-3">
-            <div class="m-1 h-60">
-
-            </div>
-            <input class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="small_size" type="file">
+        <div class="w-auto bg-blue-300 rounded-lg m-4 lg:m-7 shadow-lg">
+            <div class="h-60 flex justify-around mb-1 md:mb-2" id="uploaded-img-container"></div>
+            <input
+                class="block m-0 p-2 w-full text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                id="uploaded-img" type="file">
         </div>
         <!-- Doll -->
-        <div class="w-80 bg-blue-300 rounded-lg m-4 lg:m-7 p-3">
-            <div class="m-1 h-40">
-
+        <div class="w-80 bg-blue-300 rounded-lg m-4 lg:m-7 p-1 gif-container shadow-lg">
+            <div class="m-1 h-auto video-container flex flex-col justify-center">
+                <video autoplay loop width="500" height="300"
+                    src="https://media1.giphy.com/media/xNnhocoYcD43qbwOSk/giphy360p.mp4?cid=ecf05e47mcu9bbzlvr6krdzoemiitkv1r1m29j2ohamxkvh2&ep=v1_videos_search&rid=giphy360p.mp4&ct=v&cc=en"
+                    id="termsandconditionsgif">
+                    Do you Read the terms and conditions everytime you make a download from a site?
+                </video>
+                <picture>
+                    <source media="(max-width: 900px)"
+                        srcset="{{ url_for('static', filename='images/arrowdown.gif') }}">
+                    <img class="w-80 h-20 shadow-lg" src="{{ url_for('static', filename='images/arrowright.webp') }}"
+                        alt="Arrow">
+                </picture>
+                <button id="compress-btn"
+                    class="mt-1 block w-gull bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                    Click here after uploading image
+                </button>
             </div>
         </div>
         <!-- Settings -->
-        <div class="w-80 bg-blue-300 rounded-lg m-4 lg:m-7 p-3 text-center">
-            <div class="m-1 h-60">
-
-            </div>
+        <div class="w-auto bg-blue-300 rounded-lg m-4 lg:m-7 shadow-lg">
+            <div class="h-60 flex justify-around mb-1 md:mb-2" id="compressed-img-container"></div>
             <button
-                class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
-                Download Now
+                class="block w-gull bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                Download here when done!
             </button>
         </div>
     </div>
@@ -137,11 +274,21 @@
     <div class="min-w-fit m-3">
         <h2 class="text-4xl md:text-5xl text-purple-200">Aaron Ontoyin Yin</h2>
         <div class="w-full p-8 pb-0  flex justify-center">
-            <img class="rounded-full w-48 h-48 shadow-lg" src="{{ url_for('static', filename='images/aaron.jpg') }}" alt="Aaron Ontoyin">
+            <img class="rounded-full w-48 h-48 shadow-lg" src="{{ url_for('static', filename='images/aaron.jpg') }}"
+                alt="Aaron Ontoyin">
         </div>
     </div>
     <div class="p-4 md:p-9">
-        <p class="text-purple-500 leading-loose text-center lg:text-right reflection">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates consequatur labore facere quaerat vel debitis nam ad. Suscipit, doloremque. Minus quae ex odit consectetur dignissimos neque voluptatum et non, sit iure culpa architecto, reiciendis aut delectus nulla id omnis deserunt repellendus. Assumenda, quo. Porro impedit eum nemo ullam vero praesentium!</p>
+        <p class="text-purple-500 leading-loose text-center lg:text-right reflection">
+            Hey there! I'm an electrical and electronics engineering student diving into the tech universe.
+            Code is my canvas—AI, data science, and software engineering are my brushstrokes, with Python as my
+            masterpiece. Beyond coding, friendships warm my days.
+            Robotics engineering adds excitement to my journey. Circuits and code lines converge in a dance of
+            innovation. And when the tech world pauses,
+            you'll find me lost in movies and series, living tales beyond screens.
+            Amidst tech discoveries and cinematic wonders, I'm in search of that sweet spot where creativity meets
+            exploration. Join me as I unravel engineering marvels,
+            tech adventures, and storytelling magic.</p>
     </div>
 </section>
 
@@ -150,28 +297,29 @@
         <div class="text-center">
             <h2 class="text-3xl font-semibold text-gray-800 mb-4">About Us</h2>
             <p class="text-gray-600 leading-relaxed">
-                Welcome to our website! We are a passionate team dedicated to delivering high-quality solutions for your needs. With years of experience, we strive to provide innovative and creative solutions that make a difference.
+                Welcome! We are all about letting you elevate your visuals with our pioneering image compression
+                algorithm.
+                Experience quality without compromise, as we redefine optimization. Join us in the evolution of image
+                compression at Virtual World.
             </p>
         </div>
         <div class="mt-12 flex flex-wrap -mx-4">
             <div class="w-full md:w-1/2 px-4">
                 <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Mission</h3>
                 <p class="text-gray-600">
-                    Our mission is to empower individuals and businesses with cutting-edge technologies. We believe in the transformative power of technology and its ability to enhance lives and drive progress.
+                    Transforming digital experiences through revolutionary image compression solutions. Enhancing
+                    quality, optimizing performance, and shaping a seamless future with Virtual World.
                 </p>
             </div>
             <div class="w-full md:w-1/2 px-4">
                 <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Vision</h3>
                 <p class="text-gray-600">
-                    Our vision is to become a leader in the industry by consistently delivering outstanding products and services. We aim to foster innovation, collaboration, and positive impact on a global scale.
+                    Pioneering a future where image compression seamlessly combines quality and efficiency, setting new
+                    industry benchmarks.
                 </p>
             </div>
         </div>
     </div>
-</section>    
+</section>
 
-<footer class="bg-gray-900 text-white p-4 text-center">
-    <p>&copy; 2023 VW. All rights reserved.</p>
-</footer>
-    
 {% endblock %}

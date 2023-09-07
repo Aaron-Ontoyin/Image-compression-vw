@@ -5,3 +5,25 @@
 .reflection {
     text-shadow: 5px 5px black;
 }
+
+.video-container {
+    display: inline-block;
+    position: relative;
+}
+
+#termsandconditionsgif {
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover #termsandconditionsgif {
+    transform: scale(1.02);
+}
+
+.gif-container {
+    height: fit-content;
+    width: fit-content;
+}
+
+/* .help {
+    overflow: scroll;
+} */

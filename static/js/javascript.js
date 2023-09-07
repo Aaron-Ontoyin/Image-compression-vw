@@ -1,4 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const uploadedImgInput = document.getElementById('uploaded-img');
+  const uploadedImgContainer = document.getElementById('uploaded-img-container');
+
+  uploadedImgInput.addEventListener('change', (event) => {
+    const selectedFile = event.target.files[0];
+
+    if (selectedFile) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.className = 'h-full rounded-lg';
+
+        uploadedImgContainer.innerHTML = '';
+        uploadedImgContainer.appendChild(img);
+      };
+
+      reader.readAsDataURL(selectedFile);
+    }
+  });
+
+
+  const videoElement = document.getElementById('termsandconditionsgif');
+
+  videoElement.addEventListener('mouseenter', () => {
+    videoElement.play();
+  });
+
+  videoElement.addEventListener('mouseleave', () => {
+    videoElement.pause();
+  });
+
   var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -43,13 +76,14 @@ document.addEventListener("DOMContentLoaded", function () {
   window.onload = function () {
     var elements = document.getElementsByClassName('typewrite');
     var dataValues = [
-      "Hi, I'm Si.",
-      "I am Creative.",
-      "I Love Design.",
-      "I Love to Develop."
-    ];  
+      "Select Compression Settings",
+      "Click on <i>Choose file</i> to upload Image",
+      "After which, '<i>Upload an image and click here!</i>' would  change to '<i>Compress Image</i>'",
+      "Clicl on <i>Compress Image</i>",
+      "Clicl on <i>Download Image</i> if satisfied with the compression"
+    ];
     var jsonData = JSON.stringify(dataValues);
-    
+
     elements[0].setAttribute("data-type", jsonData);
 
     for (var i = 0; i < elements.length; i++) {
@@ -66,7 +100,113 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(css);
   };
 
+  // Close navbar on small screens
+  const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuButton.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.add('hidden');
+
+  mobileMenuButton.addEventListener('click', () => {
+    const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+
+    if (expanded) {
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.add('hidden');
+    } else {
+      mobileMenuButton.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.remove('hidden');
+    }
+  });
+
+  // Click to compress
+  document.getElementById("compress-btn").addEventListener('click', function (e) {
+    e.preventDefault();
+    loadingContainer();
+
+
+    var imageInput = document.getElementById("uploaded-img");
+
+    if (imageInput.files.length === 0) {
+      alert("Upload an image before clicking the button!");
+    } else {
+      // Show loading message
+      var compressedImageContainer = document.getElementById("compressed-img-container");
+
+      var formData = new FormData(document.getElementById("settings-form"));
+      formData.append("image", imageInput.files[0]);
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/api/compress", true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            const img = document.createElement('img');
+            img.src = this.response.image_url; // NOTE:  
+            img.alt = "Compressed Image"
+            img.className = 'h-full rounded-lg';
+
+            compressedImageContainer.innerHTML = '';
+            compressedImageContainer.appendChild(img);
+          } else {
+            alert("Error: " + xhr.status + " - " + xhr.statusText);
+          }
+        }
+      };
+
+      xhr.send(formData);
+    }
+  });
+
 });
+
+// Display loading for compressed image div
+function loadingContainer() {
+  var container = document.getElementById("compressed-img-container");
+  container.innerHTML = "Loading..."
+}
+
+
+// Limit settings
+const compressionTypeDropdown = document.getElementById("compression-type");
+const imageFormatDropdown = document.getElementById("image-format");
+
+const imageFormatsByCompressionType = {
+  Lossless: ["JPEG", "PNG", "BMP", "TIFF", "PPM", "PBM", "PGM", "EPS", "PSD", "PDF", "ICO", "ICNS", "TGA", "SPIDER", "XBM", "XPM", "IM"],
+  Lossy: ["JPEG", "WebP", "GIF", "PPM", "PBM", "PGM", "EPS", "PSD", "PDF", "ICO", "ICNS", "TGA", "SPIDER", "XBM", "XPM", "IM"]
+};
+
+function updateImageFormats() {
+  const selectedCompressionType = compressionTypeDropdown.value;
+  const availableImageFormats = imageFormatsByCompressionType[selectedCompressionType];
+
+  imageFormatDropdown.innerHTML = "";
+
+  availableImageFormats.forEach(format => {
+    const option = document.createElement("option");
+    option.style.backgroundColor = "aliceblue";
+    option.value = format;
+    option.textContent = format;
+    imageFormatDropdown.appendChild(option);
+  });
+
+  const compressionMagnitude = document.getElementById("compression-magnitude");
+  const metaDataPreservation = document.getElementById("meta-data-preservation");
+  const optimizationLevel = document.getElementById("optimization-level");
+
+  if (selectedCompressionType === 'Lossless') {
+    compressionMagnitude.setAttribute("disabled", true);
+    metaDataPreservation.setAttribute("disabled", true);
+    optimizationLevel.setAttribute("disabled", true);
+  } else {
+    compressionMagnitude.removeAttribute("disabled");
+    metaDataPreservation.removeAttribute("disabled");
+    optimizationLevel.removeAttribute("disabled");
+  }
+}
+
+compressionTypeDropdown.addEventListener("change", updateImageFormats);
+
 
 function changeButtonText(newText, id) {
   const button = document.getElementById(id);
@@ -76,7 +216,9 @@ function changeButtonText(newText, id) {
       </svg>`;
 };
 
+
 function scrollTo(to) {
-    const targetSection = document.getElementById(to);
-    targetSection.scrollIntoView({ behavior: 'smooth' });
+  const targetSection = document.getElementById(to);
+  targetSection.scrollIntoView({ behavior: 'smooth' });
 };
+
