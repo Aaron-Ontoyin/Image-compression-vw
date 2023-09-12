@@ -118,12 +118,12 @@
             </div>
 
             <div class="relative m-3 h-10 w-72 min-w-[200px]">
-                <select id="image-format" name="image_format" 
-                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">                    
+                <select id="image-format" name="image_format"
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
                     <option style="background-color: aliceblue;" value="JPEG">JPEG</option>
                     <option style="background-color: aliceblue;" value="PNG">PNG</option>
                     <option style="background-color: aliceblue;" value="BMP">BMP</option>
-                    <option style="background-color: aliceblue;" value="TIFF">TIFF</option>                    
+                    <option style="background-color: aliceblue;" value="TIFF">TIFF</option>
                     <option style="background-color: aliceblue;" value="PPM">PPM</option>
                     <option style="background-color: aliceblue;" value="PBM">PBM</option>
                     <option style="background-color: aliceblue;" value="PGM">PGM</option>
@@ -165,13 +165,14 @@
             </div>
 
             <div class="relative m-3 h-10 w-72 min-w-[200px]">
-                <select id="resolution" name="resolution"
-                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
-                    <option style="background-color: aliceblue;" value="Full Size">Full Size</option>
-                    <option style="background-color: aliceblue;" value="High">High</option>
-                    <option style="background-color: aliceblue;" value="Medium">Medium</option>
-                    <option style="background-color: aliceblue;" value="Low">Low</option>
-                </select>
+                <div class="flex flex-row mt-1">
+                    <input type="number" name="resolution1" id="res1" value="250"
+                        class="peer m-1 w-20 rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                    <span>X</span>
+                    <input type="number" name="resolution2" id="res2" value="250"
+                        class="peer m-1 w-20 rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                </div>
+
                 <label
                     class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                     Resolution
@@ -203,7 +204,7 @@
                 </label>
             </div>
 
-            <div class="relative m-3 h-10 w-72 min-w-[200px]">
+            <!-- <div class="relative m-3 h-10 w-72 min-w-[200px]">
                 <select id="optimization-level" name="optimization_level" disabled
                     class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
                     <option style="background-color: aliceblue;" value="Low">Low</option>
@@ -215,7 +216,7 @@
                     class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                     Optimization Level
                 </label>
-            </div>
+            </div> -->
 
         </form>
 
@@ -223,39 +224,40 @@
 
     <div class="flex flex-col lg:flex-row justify-around">
         <!-- Upload -->
-        <div class="w-auto bg-blue-300 rounded-lg m-4 lg:m-7 shadow-lg">
-            <div class="h-60 flex justify-around mb-1 md:mb-2" id="uploaded-img-container"></div>
-            <input
-                class="block m-0 p-2 w-full text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                id="uploaded-img" type="file">
+        <div class="w-auto m-4 lg:m-3">
+            <span class="text-sm m-1" id="original-specs"></span>
+            <div class="w-auto bg-blue-300 rounded-lg shadow-lg">
+                <div class="image-container h-auto flex justify-around mb-1 md:mb-2" id="uploaded-img-container"></div>
+                <input
+                    class="block m-0 p-2 w-full text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    id="uploaded-img" type="file">
+            </div>
         </div>
         <!-- Doll -->
-        <div class="w-80 bg-blue-300 rounded-lg m-4 lg:m-7 p-1 gif-container shadow-lg">
-            <div class="m-1 h-auto video-container flex flex-col justify-center">
-                <video autoplay loop width="500" height="300"
-                    src="https://media1.giphy.com/media/xNnhocoYcD43qbwOSk/giphy360p.mp4?cid=ecf05e47mcu9bbzlvr6krdzoemiitkv1r1m29j2ohamxkvh2&ep=v1_videos_search&rid=giphy360p.mp4&ct=v&cc=en"
-                    id="termsandconditionsgif">
-                    Do you Read the terms and conditions everytime you make a download from a site?
-                </video>
+        <div class="w-auto rounded-lg m-4 lg:m-3 p-1 gif-container flex flex-col items-center">
+            <div class="m-1 h-auto" id="video-container">
                 <picture>
                     <source media="(max-width: 900px)"
                         srcset="{{ url_for('static', filename='images/arrowdown.gif') }}">
-                    <img class="w-80 h-20 shadow-lg" src="{{ url_for('static', filename='images/arrowright.webp') }}"
+                    <img class="shadow-lg arrow-gif" src="{{ url_for('static', filename='images/arrowright.webp') }}"
                         alt="Arrow">
                 </picture>
-                <button id="compress-btn"
-                    class="mt-1 block w-gull bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
-                    Click here after uploading image
-                </button>
             </div>
+            <button id="compress-btn"
+                class="mt-1 block w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                Click here to Compress
+            </button>
         </div>
         <!-- Settings -->
-        <div class="w-auto bg-blue-300 rounded-lg m-4 lg:m-7 shadow-lg">
-            <div class="h-60 flex justify-around mb-1 md:mb-2" id="compressed-img-container"></div>
-            <button
-                class="block w-gull bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
-                Download here when done!
-            </button>
+        <div class="w-auto m-4 lg:m-3">
+            <span class="text-sm m-1" id="compressed-specs"></span>
+            <div class="image-container h-auto bg-blue-300 rounded-lg shadow-lg">
+                <div class="h-70 w-full flex justify-around mb-1 md:mb-2" id="compressed-img-container"></div>
+                <button id="download-img"
+                    class="block w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                    Download here when done!
+                </button>
+            </div>
         </div>
     </div>
     <div class="grid bg-gradient-to-b from-blue-100 to-slate-600 pt-10 w-screen">
@@ -296,7 +298,7 @@
     <div class="container mx-auto px-4">
         <div class="text-center">
             <h2 class="text-3xl font-semibold text-gray-800 mb-4">About Us</h2>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed justify">
                 Welcome! We are all about letting you elevate your visuals with our pioneering image compression
                 algorithm.
                 Experience quality without compromise, as we redefine optimization. Join us in the evolution of image
@@ -305,15 +307,15 @@
         </div>
         <div class="mt-12 flex flex-wrap -mx-4">
             <div class="w-full md:w-1/2 px-4">
-                <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Mission</h3>
-                <p class="text-gray-600">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Our Mission</h3>
+                <p class="text-gray-600 justify">
                     Transforming digital experiences through revolutionary image compression solutions. Enhancing
                     quality, optimizing performance, and shaping a seamless future with Virtual World.
                 </p>
             </div>
             <div class="w-full md:w-1/2 px-4">
-                <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Vision</h3>
-                <p class="text-gray-600">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Our Vision</h3>
+                <p class="text-gray-600 justify">
                     Pioneering a future where image compression seamlessly combines quality and efficiency, setting new
                     industry benchmarks.
                 </p>
