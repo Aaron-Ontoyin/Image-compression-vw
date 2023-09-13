@@ -54,28 +54,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-const compressedImageContainer = document.getElementById("compressed-img-container");
-const downloadButton = document.getElementById("download-img");
+  const compressedImageContainer = document.getElementById("compressed-img-container");
+  const downloadButton = document.getElementById("download-img");
 
-downloadButton.addEventListener('click', () => {
-  // Check if there is an image in the compressedImageContainer
-  const image = compressedImageContainer.querySelector('img');
+  downloadButton.addEventListener('click', () => {
+    // Check if there is an image in the compressedImageContainer
+    const image = compressedImageContainer.querySelector('img');
 
-  if (image) {
-    // If an image exists, create a download link for it
-    const downloadLink = document.createElement('a');
-    downloadLink.href = image.src;
-    downloadLink.download = "compressed-image"; // Set the desired download file name
-    downloadLink.style.display = 'none'; // Hide the download link
+    if (image) {
+      // If an image exists, create a download link for it
+      const downloadLink = document.createElement('a');
+      downloadLink.href = image.src;
+      downloadLink.download = "compressed-image"; // Set the desired download file name
+      downloadLink.style.display = 'none'; // Hide the download link
 
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-  } else {
-    // If there's no image, display an error message
-    alert("Upload and compress Image before!");
-  }
-});
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    } else {
+      // If there's no image, display an error message
+      alert("Upload and compress Image before!");
+    }
+  });
 
 });
 
@@ -180,17 +180,18 @@ document.getElementById("compress-btn").addEventListener('click', function (e) {
     var formData = new FormData(document.getElementById("settings-form"));
     formData.append("image", imageInput.files[0]);
 
-    var xhr = new XMLHttpRequest();
-    xhr.responseType = "blob";
-    xhr.open("POST", "/api/compress", true);
+    var imageXhr = new XMLHttpRequest();
+    imageXhr.responseType = "blob";
+    imageXhr.open("POST", "/api/compress", true);
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
+    imageXhr.onreadystatechange = function () {
+      if (imageXhr.readyState === 4) {
+        if (imageXhr.status === 200) {
           const img = document.createElement('img');
-          var processedImageBlob = xhr.response;
-          var processedImageUrl = URL.createObjectURL(processedImageBlob);    
-          
+
+          var processedImageBlob = imageXhr.response;
+          var processedImageUrl = URL.createObjectURL(processedImageBlob);
+
           img.src = processedImageUrl
           img.alt = "Compressed Image"
           img.className = 'h-full rounded-lg';
@@ -198,30 +199,36 @@ document.getElementById("compress-btn").addEventListener('click', function (e) {
           compressedImageContainer.innerHTML = '';
           compressedImageContainer.appendChild(img);
 
-          const type = xhr.getResponseHeader("Content-Type").split('/').pop();
-          const compressed_image = new Image();
-          compressed_image.src = processedImageUrl;
+          var imageDataXhr = new XMLHttpRequest();
+          imageDataXhr.open("GET", "/api/image-data", true);
+          imageDataXhr.onreadystatechange = function () {
+            if (imageDataXhr.readyState === 4) {
+              if (imageDataXhr.status === 200) {
+                const imgData = JSON.parse(imageDataXhr.response);
 
-          compressed_image.onload = () => {
-            const width = compressed_image.width;
-            const height = compressed_image.height;
-            displayImageInfo(imageInput.files[0].size, type, height, width, document.getElementById("compressed-specs"));
+                displayImageInfo(imgData.size, imgData.format, imgData.height, imgData.width, document.getElementById("compressed-specs"));
+              } else {
+                alert("Error: " + imageXhr.status + " - " + imageXhr.statusText);
+              }
+            }
           }
+          imageDataXhr.send();
 
         } else {
-          alert("Error: " + xhr.status + " - " + xhr.statusText);
+          alert("Error: " + imageXhr.status + " - " + imageXhr.statusText);
         }
+  
       }
     };
 
-    xhr.send(formData);
+    imageXhr.send(formData);
   }
 });
 
 // Display loading for compressed image div
 function loadingContainer() {
   var container = document.getElementById("compressed-img-container");
-  container.innerHTML = "Loading..."
+  container.innerHTML = "Loading... A moment..."
 }
 
 
@@ -230,8 +237,9 @@ const compressionTypeDropdown = document.getElementById("compression-type");
 const imageFormatDropdown = document.getElementById("image-format");
 
 const imageFormatsByCompressionType = {
-  Lossless: ["PNG", "BMP", "TIFF", "PPM", "PBM", "PGM", "EPS", "PSD", "ICO", "ICNS", "TGA", "SPIDER", "XBM", "XPM", "IM"],
-  Lossy: ["JPEG", "WebP", "GIF"]
+  Lossless: ["PNG", "BMP"],
+  Lossy: ["JPEG", "WebP", "GIF"],
+  // , "TIFF", "PPM", "PBM", "PGM", "EPS", "PSD", "ICO", "ICNS", "TGA", "SPIDER", "XBM", "XPM", "IM"
 };
 
 function updateImageFormats() {
@@ -265,7 +273,16 @@ function updateImageFormats() {
 
 compressionTypeDropdown.addEventListener("change", updateImageFormats);
 
-
+const resolutionStatus = document.getElementById("resolution_status");
+resolutionStatus.addEventListener("change", function () {
+  if (resolutionStatus === "Original") {
+    document.getElementById("res1").setAttribute("disabled", true);
+    document.getElementById("res2").setAttribute("disabled", true);
+  } else {
+    document.getElementById("res1").removeAttribute("disabled");
+    document.getElementById("res2").removeAttribute("disabled");
+  }
+})
 
 function changeButtonText(newText, id) {
   const button = document.getElementById(id);
